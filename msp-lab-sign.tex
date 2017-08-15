@@ -6,6 +6,15 @@
 \renewcommand{\familydefault}{\sfdefault}  % default font
 \def\labelitemi{--}                        % - instead of * for items.
 
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+
+\newcommand{\crossout}[1]{\raisebox{0mm}{%
+    \tikz{\draw(0,0) node[anchor=west,inner sep=0,text depth=0.2mm](crossedWord){#1};
+        \draw[decorate,decoration={random steps,amplitude=1pt},line width=3pt,opacity=0.6](crossedWord.west) -- (crossedWord.east);
+    }}}
+
+
 \begin{document}
 
 \title{\Huge \textbf{Mathematically Structured Programming Group}}
@@ -19,27 +28,27 @@
 \begin{multicols}{2}
 \large
 \begin{itemize}
-  \item Robin Adams (Visitor)
+  \item \crossout{Robin Adams (Visitor)}
   \item Guillaume Allais
   \item Stevan Andjelkovic
-  \item Bob Atkey (RA)
+  \item \crossout{Bob Atkey (RA)}
   \item Simone Barlocco
-  \item Alwin Blok
+  \item \crossout{Alwin Blok}
   \item James Chapman (RA)
-  \item Pierre-Evariste Dagand
+  \item \crossout{Pierre-Evariste Dagand}
   \item Kevin Dunne
-  \item Cl\'{e}ment Fumex
+  \item \crossout{Cl\'{e}ment Fumex}
   \item Stuart Gale
-  \item Adam Gundry
-  \item Peter Hancock (RA)
+  \item \crossout{Adam Gundry}
+  \item \crossout{Peter Hancock (RA)}
   \item Alasdair Lambert
-  \item Sam Lindley (RA)
-  \item Lorenzo ``Mr. Baby'' Malatesta
-  \item Johannes Marti (RA)
+  \item \crossout{Sam Lindley (RA)}
+  \item \crossout{Lorenzo ``Mr. Baby'' Malatesta}
+  \item \crossout{Johannes Marti (RA)}
   \item Fredrik Nordvall Forsberg (RA)
-  \item Federico Orsanigo
+  \item \crossout{Federico Orsanigo}
   \item Ben Price
-  \item Tim Revell
+  \item \crossout{Tim Revell}
   \item Jason Smith (RA)
 \end{itemize}
 \end{multicols}
