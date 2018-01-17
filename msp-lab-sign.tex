@@ -8,16 +8,24 @@
 
 \usepackage[overlay, absolute]{textpos}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\crossout}[1]{\raisebox{0mm}{%
     \tikz{\draw(0,0) node[anchor=west,inner sep=0,text depth=0.2mm](crossedWord){#1};
         \draw[decorate,decoration={random steps,amplitude=1pt},line width=3pt,opacity=0.6](crossedWord.west) -- (crossedWord.east);
-    }}}
+      }}}
+
+\newcommand{\person}[1]{\item #1}
+\newcommand{\Xperson}[1]{\ifkeepOld \item \crossout{#1} \else\fi}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newif\ifkeepOld
 \renewcommand{\familydefault}{\sfdefault}  % default font
 \def\labelitemi{--}                        % - instead of * for items.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% Keep old names? %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\keepOldtrue
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -33,30 +41,30 @@
 \begin{multicols}{2}
 \large
 \begin{itemize}
-  \item \crossout{Robin Adams (Visitor)}
-  \item Guillaume Allais
-  \item \crossout{Malin Altenm\"{u}ller}
-  \item Stevan Andjelkovic
-  \item \crossout{Bob Atkey (RA)}
-  \item Simone Barlocco
-  \item \crossout{Alwin Blok}
-  \item James Chapman (RA)
-  \item Joseph Collins
-  \item \crossout{Pierre-Evariste Dagand}
-  \item Kevin Dunne
-  \item \crossout{Cl\'{e}ment Fumex}
-  \item Stuart Gale
-  \item \crossout{Adam Gundry}
-  \item \crossout{Peter Hancock (RA)}
-  \item Alasdair Lambert
-  \item \crossout{Sam Lindley (RA)}
-  \item \crossout{Lorenzo ``Mr. Baby'' Malatesta}
-  \item \crossout{Johannes Marti (RA)}
-  \item Fredrik Nordvall Forsberg (RA)
-  \item \crossout{Federico Orsanigo}
-  \item Ben Price
-  \item \crossout{Tim Revell}
-  \item James Wood
+  \Xperson{Robin Adams (Visitor)}
+  \person{Guillaume Allais}
+  \Xperson{Malin Altenm\"{u}ller}
+  \person{Stevan Andjelkovic}
+  \Xperson{Bob Atkey (RA)}
+  \person{Simone Barlocco}
+  \Xperson{Alwin Blok}
+  \person{James Chapman (RA)}
+  \person{Joseph Collins}
+  \Xperson{Pierre-Evariste Dagand}
+  \person{Kevin Dunne}
+  \Xperson{Cl\'{e}ment Fumex}
+  \person{Stuart Gale}
+  \Xperson{Adam Gundry}
+  \Xperson{Peter Hancock (RA)}
+  \person{Alasdair Lambert}
+  \Xperson{Sam Lindley (RA)}
+  \Xperson{Lorenzo ``Mr. Baby'' Malatesta}
+  \Xperson{Johannes Marti (RA)}
+  \person{Fredrik Nordvall Forsberg (RA)}
+  \Xperson{Federico Orsanigo}
+  \person{Ben Price}
+  \Xperson{Tim Revell}
+  \person{James Wood}
 \end{itemize}
 \end{multicols}
 \vskip 3cm
@@ -72,8 +80,8 @@
        {\Large \textbf{Combinatorics Group}}
      \end{center}
        \begin{itemize}
-       \item \crossout{Stuart Hannah}
-       \item Jason Smith (RA)
+       \Xperson{Stuart Hannah}
+       \person{Jason Smith (RA)}
        \end{itemize}
      \end{textblock}
 }
