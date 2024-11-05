@@ -14,13 +14,13 @@
         \draw[decorate,decoration={random steps,amplitude=1pt},line width=3pt,opacity=0.6](crossedWord.west) -- (crossedWord.east);
       }}}
 
-\newcommand{\person}[1]{\item #1}
-\newcommand{\Xperson}[1]{\ifkeepOld \item \crossout{#1} \else\fi}
+\newcommand{\person}[1]{\def\labelitemi{--}\item #1}
+\newcommand{\Xperson}[1]{\def\labelitemi{{\small--}}\ifkeepOld{\item \small \crossout{#1}}\else\fi}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newif\ifkeepOld
 \renewcommand{\familydefault}{\sfdefault}  % default font
-\def\labelitemi{--}                        % - instead of * for items.
+%\def\labelitemi{--}                        % - instead of * for items.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -42,7 +42,7 @@
 \begin{multicols}{2}
 \begin{itemize}
   \Xperson{Robin Adams (Visitor)}
-  \Xperson{Guillaume Allais}\ifkeepOld\crossout{(RA)}\else\fi
+  \Xperson{Guillaume Allais}\ifkeepOld{\small\crossout{(RA)}}\else\fi
   \person{Malin Altenm\"{u}ller}
   \Xperson{Stevan Andjelkovic}
   \Xperson{Bob Atkey (RA)}
